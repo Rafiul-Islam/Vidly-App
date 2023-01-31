@@ -8,7 +8,7 @@ const ListGroup = (props) => {
                 {items.map(item =>
                     <li
                         key={item[valueProperty]}
-                        className={selectedItem === item ? "list-group-item active" : "list-group-item"}
+                        className={selectedItem === item ? "list-group-item list-group-item-action clickable active" : "list-group-item list-group-item-action clickable"}
                         onClick={() => onItemSelect(item)}
                     >
                         {item[textProperty]}

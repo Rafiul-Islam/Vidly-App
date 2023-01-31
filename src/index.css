@@ -13,8 +13,6 @@ code {
     monospace;
 }
 
-.like-component,
-.pagination .page-link,
-.list-group .list-group-item{
+.clickable{
     cursor: pointer;
 }

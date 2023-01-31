@@ -6,7 +6,7 @@ const Like = (props) => {
     return (
         <i
             onClick={onClick}
-            className={'like-component fa fa-heart' + getClasses()}>
+            className={'clickable fa fa-heart' + getClasses()}>
         </i>
     );
 };
