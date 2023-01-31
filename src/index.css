@@ -14,6 +14,7 @@ code {
 }
 
 .like-component,
-.pagination .page-link {
+.pagination .page-link,
+.list-group .list-group-item{
     cursor: pointer;
 }
