@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-sm navbar-light bg-light py-3">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <NavLink className="navbar-brand" to='/movies'>Moviely</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
