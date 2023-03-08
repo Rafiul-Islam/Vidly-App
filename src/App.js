@@ -6,12 +6,14 @@ import NotFound from "./components/notFound";
 import Navbar from "./components/navbar";
 import MovieForm from "./components/movieForm";
 import LoginForm from "./components/loginForm";
-import './App.css';
 import RegisterForm from "./components/registerForm";
+import {ToastContainer} from "react-toastify";
+import './App.css';
 
 function App() {
     return (
         <>
+            <ToastContainer/>
             <Navbar/>
             <main className='container mt-4'>
                 <Switch>
