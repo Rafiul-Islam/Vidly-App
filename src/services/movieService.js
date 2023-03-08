@@ -1,8 +1,11 @@
 import http from "./httpService";
 import config from "../config.json";
-import * as genresAPI from "./fakeGenreService";
 
 const apiEndPoint = config.apiUrl + "/movies";
+
+function movieUrl(id){
+    return `${apiEndPoint}/${id}`;
+}
 
 export function getMovies() {
     return http.get(apiEndPoint);
@@ -13,9 +16,15 @@ export function getMovie(id) {
 }
 
 export function saveMovie(movie) {
-    console.log(movie)
+    if (movie._id) {
+        const body = {...movie};
+        delete body._id;
+        return http.put(movieUrl(movie._id), body);
+    }
+
+    return http.post(apiEndPoint, movie);
 }
 
 export function deleteMovie(id) {
-    return http.delete(`${apiEndPoint}/${id}`);
+    return http.delete(movieUrl(id));
 }
