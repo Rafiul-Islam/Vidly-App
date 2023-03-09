@@ -13,7 +13,7 @@ import './App.css';
 function App() {
     return (
         <>
-            <ToastContainer/>
+            <ToastContainer theme={"colored"}/>
             <Navbar/>
             <main className='container mt-4'>
                 <Switch>
