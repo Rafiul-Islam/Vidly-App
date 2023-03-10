@@ -35,7 +35,7 @@ const Navbar = ({user}) => {
                                 Rentals
                             </NavLink>
                         </li>
-                        {!user.name &&
+                        {!user &&
                             <>
                                 <li className="nav-item">
                                     <NavLink
@@ -53,7 +53,7 @@ const Navbar = ({user}) => {
                                 </li>
                             </>
                         }
-                        {user.name &&
+                        {user &&
                             <>
                                 <li className="nav-item">
                                     <NavLink
