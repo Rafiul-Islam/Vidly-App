@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({user}) => {
     return (
         <nav className="navbar navbar-expand-sm navbar-light bg-light py-3">
             <div className="container-fluid">
@@ -35,20 +35,42 @@ const Navbar = () => {
                                 Rentals
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink
-                                to='/login'
-                                className="nav-link">
-                                Login
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink
-                                to='/register'
-                                className="nav-link">
-                                Register
-                            </NavLink>
-                        </li>
+                        {!user.name &&
+                            <>
+                                <li className="nav-item">
+                                    <NavLink
+                                        to='/login'
+                                        className="nav-link">
+                                        Login
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink
+                                        to='/register'
+                                        className="nav-link">
+                                        Register
+                                    </NavLink>
+                                </li>
+                            </>
+                        }
+                        {user.name &&
+                            <>
+                                <li className="nav-item">
+                                    <NavLink
+                                        to='/profile'
+                                        className="nav-link">
+                                        {user.name}
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink
+                                        to='/logout'
+                                        className="nav-link">
+                                        Logout
+                                    </NavLink>
+                                </li>
+                            </>
+                        }
                     </ul>
                 </div>
             </div>
