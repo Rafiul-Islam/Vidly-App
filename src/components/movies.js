@@ -4,7 +4,7 @@ import {deleteMovie, getMovies} from "../services/movieService";
 import Pagination from "./common/pagination";
 import {paginate} from "../utils/paginate";
 import ListGroup from "./common/listGroup";
-import {getGenres} from "../services/genreService";
+import getGenres from "../services/genreService";
 import MoviesTable from "./moviesTable";
 import {NavLink} from "react-router-dom";
 import SearchBox from "./common/searchBox";

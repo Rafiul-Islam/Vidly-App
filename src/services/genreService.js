@@ -1,6 +1,6 @@
 import http from "./httpService";
 import config from "../config.json";
 
-export function getGenres() {
+export default function getGenres() {
     return http.get(config.apiUrl + "/genres");
 }
