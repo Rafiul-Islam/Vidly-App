@@ -9,6 +9,8 @@ const getJWT = () => {
     return localStorage.getItem(tokenKey);
 }
 
+http.setJwt(getJWT());
+
 const login = async (user) => {
     const {username, password} = user;
     const {data: jwt} = await http.post(apiEndPoint, {email: username, password: password});
