@@ -103,6 +103,7 @@ class Movies extends Component {
     }
 
     render() {
+        const { user } = this.props;
         const {length: count} = this.state.movies
         const {pageSize, currentPage, genres, selectedGenre, sortColumn, searchQuery} = this.state;
         if (count === 0)
@@ -119,7 +120,7 @@ class Movies extends Component {
                     />
                 </div>
                 <div className='col'>
-                    <NavLink to='/movies/new' className="btn btn-primary py-2 mb-4">New Movie</NavLink>
+                    {user && <NavLink to='/movies/new' className="btn btn-primary py-2 mb-4">New Movie</NavLink>}
                     <p>Showing {totalCount} movies in the database.</p>
                     <SearchBox
                         value={searchQuery}

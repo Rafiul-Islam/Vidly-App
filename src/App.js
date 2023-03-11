@@ -9,6 +9,7 @@ import Navbar from "./components/navbar";
 import MovieForm from "./components/movieForm";
 import LoginForm from "./components/loginForm";
 import RegisterForm from "./components/registerForm";
+import ProtectedRoute from "./components/common/ProtectedRoute";
 import Logout from "./components/logout";
 import auth from "./services/authService";
 import './App.css';
@@ -28,8 +29,8 @@ function App() {
             <Navbar user={user}/>
             <main className='container mt-4'>
                 <Switch>
-                    <Route path="/movies/:id" component={MovieForm}/>
-                    <Route path="/movies" component={Movies}/>
+                    <ProtectedRoute path="/movies/:id" component={MovieForm}/>
+                    <Route path="/movies" render={(props) => <Movies {...props} user={user}/>}/>
                     <Route path="/login" component={LoginForm}/>
                     <Route path="/logout" component={Logout}/>
                     <Route path="/register" component={RegisterForm}/>
